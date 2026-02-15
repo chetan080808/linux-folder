@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# This script is to install CloudWatch Agents and set its Configuartion file.
 echo "Installing CloudWatch Agent..."
 
 # Download the agent
