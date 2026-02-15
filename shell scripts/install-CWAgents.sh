@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Simple CloudWatch Agent Setup for Beginners
-# Run this script to install and configure memory monitoring
-
 echo "Installing CloudWatch Agent..."
 
 # Download the agent
@@ -11,8 +8,8 @@ wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-
 # Install it
 sudo dpkg -i amazon-cloudwatch-agent.deb
 
-# Create config file for memory monitoring
-sudo cat > /opt/aws/amazon-cloudwatch-agent/etc/config.json << 'EOF'
+# Create config file with sudo (THIS WAS THE ISSUE)
+sudo tee /opt/aws/amazon-cloudwatch-agent/etc/config.json > /dev/null << 'EOF'
 {
   "metrics": {
     "namespace": "CWAgent",
